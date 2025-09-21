@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Web Gallery</title>
+         <link href="style/main.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header class="page-header">
+            <h1>Web Gallery</h1>
+            <a href="credits.html" style="color: #667eea; text-decoration: none; font-size: 1rem; margin-top: 10px; display: inline-block;">Credits</a>
+        </header>
+        
+        <div class = "container">
+            <section class="add-image-section">
+                <div class="top-controls">
+                    <button id="toggle-add-form">Add New Image</button>
+                    <button id="delete-image" class="delete-btn hidden">Delete Image</button>
+                </div>
+                <div id="add-image-form" class = "hidden">
+                    <h3>Add New Image</h3>
+                    <form id = "image-form">
+                        <input type="text" id="image-title" placeholder="Image Title" required>
+                        <input type="text" id="image-author" placeholder="Author Name" required>
+                        <input type="url" id="image-url" placeholder="Image URL" required>
+                        <button type="submit">Add Image</button>
+                        <button type="button" id="cancel-add">Cancel</button>
+                    </form>
+                </div>
+            </section>
+
+            <main class = "gallery-main">
+                <div id = "empty-gallery" class = "empty-state">
+                    <h2>No images in gallery</h2>
+                    <p>Add your first image to get started!</p>
+                </div>
+                <div id="gallery-display" class="gallery-display hidden">
+                    <div class="image-container">
+                        <img id="current-image" src="" alt="Gallery Image">
+                        <div class="image-info">
+                            <h2 id="image-title-display"></h2>
+                            <p id="image-author-display"></p>
+                        </div>
+                    </div>
+                    <div class="navigation-controls">
+                        <button id="prev-image">⬅️ Previous</button>
+                        <span id="image-counter"></span>
+                        <button id="next-image">Next ➡️</button>
+                    </div>
+                </div>
+            </main>
+            <section id = "comment-section" class="comment-section">
+                <div class="comment-form-container">
+                    <h3>Add a Comment</h3>
+                    <form id="comment-form">
+                        <input type="text" id="comment-author" placeholder="Please enter your name!" required>
+                        <textarea id="comment-content" placeholder="Comment" required></textarea>
+                        <button type="submit">Add Comment</button>
+                        <button type="button" id="cancel-comment">Cancel</button>
+                    </form>
+                </div>
+            </section>
+            <div class="comments-display">
+                <h3>Comments</h3>
+                <div id="comments-list" class="comments-list">
+                    <!--comments will be added here-->
+                    <!--
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <span class="comment-author"></span>
+                            <span class="comment-date"></span>
+                            <button class="delete-comment-btn">Delete</button>
+                        </div>
+                        <div class="comment-content"></div>
+                    </div>
+                    -->
+                </div>
+                <div class="comments-navigation">
+                    <button id="prev-comments">Previous</button>
+                    <span id="comments-counter"></span>
+                    <button id="next-comments">Next</button>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="js/controller.js"></script>
+    </body>
+</html>
